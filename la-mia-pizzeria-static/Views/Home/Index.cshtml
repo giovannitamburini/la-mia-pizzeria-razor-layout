@@ -3,6 +3,19 @@
 }
 
 
+@{
+    List<Pizza> pizzaList = new List<Pizza>();
+
+    pizzaList.Add(new Pizza(1,"margherita", "Pomodoro, mozzarella, basilico", "margherita.jpg", 5.99f));
+    pizzaList.Add(new Pizza(2,"bufala", "Pomodoro, bufala, basilico", "bufala.jpg", 6.99f));
+    pizzaList.Add(new Pizza(3,"diavola", "Pomodoro, mozzarella, salame piccante", "diavola.jpg", 8.00f));
+    pizzaList.Add(new Pizza(4,"capricciosa", "Pomodoro, mozzarella, carciofi, olive, prosciutto cotto, basilico", "capricciosa.jpg", 7.50f));
+    pizzaList.Add(new Pizza(5,"americana", "Pomodoro, mozzarella, patatine fritte, wurstel", "wurstel-patatine.jpg", 6.50f));
+    pizzaList.Add(new Pizza(6,"quattro formaggi", "Mozzarella, gorgonzola, fontina, parmigiano", "quattro_formaggi.jpg", 7.00f));
+    pizzaList.Add(new Pizza(7,"ortolana", "Mozzarella, pomodorini, zucchine, melanzane, peperoni", "ortolana.jpg", 8.00f));
+}
+
+
 <div class="container">
 
     <div class="row">
@@ -22,55 +35,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><img src="~/img/margherita.jpg" width="100" /></td>
-                        <td>Margherita</td>
-                        <td>Pomodoro, mozzarella, basilico</td>
-                        <td>5.99</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><img src="~/img/bufala.jpg" width="100" /></td>
-                        <td>Bufala</td>
-                        <td>Bufala, pomodorini, basilico</td>
-                        <td>7.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><img src="~/img/diavola.jpg" width="100" /></td>
-                        <td>Diavola</td>
-                        <td>Pomodoro, mozzarella, salame piccante</td>
-                        <td>8.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td><img src="~/img/capricciosa.jpg" width="100" /></td>
-                        <td>Capricciosa</td>
-                        <td>Pomodoro, mozzarella, carciofi, olive, prosciutto cotto, basilico</td>
-                        <td>7.50</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td><img src="~/img/wurstel-patatine.jpg" width="100" /></td>
-                        <td>Americana</td>
-                        <td>Pomodoro, mozzarella, patatine fritte, wurstel</td>
-                        <td>6.50</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td><img src="~/img/quattro_formaggi.jpg" width="100" /></td>
-                        <td>Quattro Formaggi</td>
-                        <td>Mozzarella, gorgonzola, fontina, parmigiano</td>
-                        <td>6.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7</th>
-                        <td><img src="~/img/ortolana.jpg" width="100" /></td>
-                        <td>Ortolana</td>
-                        <td>Mozzarella, pomodorini, zucchine, melanzane, peperoni</td>
-                        <td>7.00</td>
-                    </tr>
+                    @foreach(Pizza pizza in pizzaList)
+                    {
+                        <tr>
+                            <th scope="row">@pizza.Id</th>
+                            <td><img src="~/img/@pizza.UrlImage" width="100" /></td>
+                            <td>@pizza.Name</td>
+                            <td>@pizza.Description</td>
+                            <td>@pizza.Price $</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
 

@@ -2,13 +2,15 @@
 {
     public class Pizza
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string UrlImage { get; set; }
         public float Price { get; set; }
 
-        public Pizza(string name, string description, string urlImage, float price)
+        public Pizza(int id,string name, string description, string urlImage, float price)
         {
+            this.Id = id;
             this.Name = name;
             this.Description = description;
             this.UrlImage = urlImage;
