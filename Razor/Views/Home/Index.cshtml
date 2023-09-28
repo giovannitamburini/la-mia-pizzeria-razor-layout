@@ -41,7 +41,19 @@
 
 </div>
 <div>
-    3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina
+    <p>3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina</p>
+    
+    @{
+        string paragraph = "nel mezzo del cammin di nostra vita";
+
+        int CountCharInParagraph(char c ,string paragraph)
+        {
+            return paragraph.Count(n => n == c);
+        }
+    }
+
+    <div>La lettera n è presente @CountCharInParagraph('n', paragraph) volte nella frase indicata</div>
+
 </div>
 <div>
     4. Creare una List<int>(int) di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70
