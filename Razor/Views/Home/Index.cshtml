@@ -8,7 +8,7 @@
         Dichiarare un'altra variabile valorizzandola con il nostro cognome.
         Stampare il nostro nome e cognome all'interno di un tag h2.
     </p>
-    
+
     @{
         string myName = "Giovanni";
         string mySurname = "Tamburini";
@@ -18,8 +18,27 @@
 
 </div>
 <div>
-    2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
-    Stampare dentro uno span il risultato.
+    <p>
+        2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
+        Stampare dentro uno span il risultato.
+    </p>
+
+    @{
+        int SumNumbersFromOneToN(int n)
+        {
+            int sum = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                sum += i;
+            }
+
+            return sum;
+        }
+    }
+
+    <span>La somma dei numeri che vanno da 1 a 5 è: @SumNumbersFromOneToN(5)</span>
+
 </div>
 <div>
     3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina
